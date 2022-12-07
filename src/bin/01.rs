@@ -3,8 +3,8 @@ use std::cmp::max;
 pub fn part_one(input: &str) -> Option<u32> {
     let mut max_calories: u32 = 0;
     let mut elf_calories: u32 = 0;
-    for line in input.split("\n") {
-        if line.len() == 0 {
+    for line in input.split('\n') {
+        if line.is_empty() {
             max_calories = max(max_calories, elf_calories);
             elf_calories = 0;
         } else {
@@ -18,8 +18,8 @@ pub fn part_two(input: &str) -> Option<u32> {
     let mut all_elves_calories: Vec<u32> = vec![];
     let mut current_elf_calories: Vec<u32> = vec![];
 
-    for line in input.split("\n") {
-        if line.len() == 0 {
+    for line in input.split('\n') {
+        if line.is_empty() {
             all_elves_calories.push(current_elf_calories.iter().sum());
             current_elf_calories = vec![];
         } else {
